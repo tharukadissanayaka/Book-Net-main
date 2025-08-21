@@ -51,6 +51,56 @@ function Home() {
         votes: '8,268 votes',
         image: '/Pictures/Dark Girl Portrait & Flowers Paper Collage Book Cover.png',
       },
+       {
+        title: 'In The Fog',
+        author: 'Shawn Garcia',
+        votes: '3,268 votes',
+        image: '/Pictures/Brown and White Thriller Book Cover.png',
+      },
+       {
+        title: 'Eye',
+        author: 'Morgan Maxwell',
+        votes: '8,990 votes',
+        image: '/Pictures/Beige and Red Minimalist Eye Illustration Book Cover.png',
+      },
+       {
+        title: 'Terra Frema',
+        author: 'Takehiro Kanegi',
+        votes: '5,255 votes',
+        image: '/Pictures/Minimalist sci-fi novel book cover.png',
+      },
+       {
+        title: 'Woods',
+        author: 'Sebastian Bennett',
+        votes: '2,556 votes',
+        image: '/Pictures/Gray Brown Minimalist Mysterious Thriller Book Cover.png',
+      },
+       {
+        title: 'Hello Carol',
+        author: 'Aaron Loeb',
+        votes: '1,920 votes',
+        image: '/Pictures/Yellow and Green Illustration Story Tale Book Cover.png',
+      },
+       {
+        title: 'The Robots',
+        author: 'Shawn Garcia',
+        votes: '3,234 votes',
+        image: '/Pictures/Black and White Modern Minimalist Robot Science Fiction Book Cover.png',
+      },
+      {
+        title: 'The Path O f Shadows',
+        author: 'Rosa Maria',
+        votes: '2,234 votes',
+        image: '/Pictures/Purple and  Dark Blue The Path Of Shadows eBook Cover.png',
+      },
+      /*
+      {
+        title: 'Venus',
+        author: 'Margarita Perez',
+        votes: '3,250 votes',
+        image: '/Pictures/Red Modern Science Fiction Book Cover.png',
+      },
+      */
     ],
   };
 

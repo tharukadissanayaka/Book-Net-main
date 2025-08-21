@@ -229,18 +229,22 @@ h4 {
   background-color: #0a192f; /* darker blue */
   color: white;
   width: 100%;
-  padding: 40px 20px;
+  
+  padding: 80px 20px;
   margin-top: 60px;
 }
 
 .footer-content {
-  max-width: 1200px;      /* keep content centered */
-  margin: 0 auto;
+  width: 100%;           /* take full width */
+  max-width: none;       /* remove the 1200px limit */
+  margin: 0;             /* remove auto-centering */
+  padding: 0 40px;       /* add some padding so text isn’t touching edges */
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
+
 
 .footer-info p {
   margin: 8px 0;

@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "./NavBar";
 import "./ContinueReading.css";
 
-<img src="/Pictures/Beige Black Brown Minimalist Photo Collage Puzzles Kindle Book Cover.png" alt="Beast Cover" />
+<img src="/Pictures/Beige Black Brown Minimalist Photo Collage Puzzles Kindle Book Cover.png" alt="Puzzels" />
 
 
 function ContinueReading() {
@@ -10,7 +10,7 @@ function ContinueReading() {
     {
       title: "Puzzels",
       author: "Hae-Won Jeon",
-      cover: BeastCover,
+      cover: Puzzels,
       episode: 3,
       page: 20,
       text: `Life is a puzzle, a complex and ever-evolving mystery that each of us is trying to 
