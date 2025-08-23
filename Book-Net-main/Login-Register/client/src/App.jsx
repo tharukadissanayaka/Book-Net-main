@@ -11,9 +11,10 @@ import Romantic from './Romantic';
 import Historical from './Historical';
 import Thriller from './Thriller';
 import MyCollection from './MyCollection'; // Import MyCollection component
-//import NewBooks from './NewBooks';
+
 import ContinueReading from './ContinueReading'; // Import ContinueReading component
 import Admin from './Admin';
+import NewBooks from "./NewBooks";
 
 
 function App() {
@@ -35,8 +36,10 @@ function App() {
         <Route path="/thriller" element={<Thriller />} />
         <Route path="/mycollection" element={<MyCollection />} /> {/* Route for MyCollection */}
         <Route path='/admin' element={<Admin />} />
-       
-        <Route path="/continuereading" element={<ContinueReading />} />
+        <Route path='/newbooks' element={<NewBooks />} />
+        <Route path="/continue-reading" element={<ContinueReading />} />
+        <Route path="/continue-reading/:id" element={<ContinueReading />} />
+
         </Routes>
     </BrowserRouter>
   );

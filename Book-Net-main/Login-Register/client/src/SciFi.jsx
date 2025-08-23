@@ -51,7 +51,7 @@ function SciFi() {
                 <p>By {book.author}</p>
                 <p className="votes">⭐ 4.5 | {book.votes || "0 votes"}</p>
                 <p className="desc">{book.description || "No description"}</p>
-                <p><b>${book.price}</b></p>
+                <p><b>Rs.{book.price}</b></p>
                 <button className="buy-btn" onClick={() => handleBuy(book)}>Buy</button>
               </div>
             </div>

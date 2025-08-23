@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Home.css'; // Reuse same styles
-
+import './Home.css';
 
 function NavBar({ activePage }) {
   const [showCategories, setShowCategories] = useState(false);
@@ -11,7 +10,8 @@ function NavBar({ activePage }) {
   const readingListRef = useRef(null);
   const navigate = useNavigate();
 
-  const userRole = localStorage.getItem("userRole"); // 👈 get role
+  const userRole = localStorage.getItem("userRole"); // get role
+  const email = localStorage.getItem("userEmail"); // get logged-in user email
 
   const handleNavigate = (path) => {
     navigate(path);
@@ -89,17 +89,35 @@ function NavBar({ activePage }) {
           </div>
           {showReadingListMenu && (
             <div className="dropdown-content">
-              <button className="category-btn" onClick={() => handleNavigate('/newbooks')}>
+              <button
+                className="category-btn"
+                onClick={() => handleNavigate('/newbooks')}
+              >
                 New Books
               </button>
-              <button className="category-btn" onClick={() => handleNavigate('/continuereading')}>
+              <button
+                className="category-btn"
+                onClick={() => {
+                  if (!email) {
+                    alert("Please log in first!");
+                    navigate("/login");
+                    return;
+                  }
+                  const lastBookId = localStorage.getItem(`lastReadBookId_${email}`);
+                  if (lastBookId) {
+                    navigate(`/continue-reading/${lastBookId}`);
+                  } else {
+                    navigate('/continue-reading');
+                  }
+                }}
+              >
                 Continue Reading
               </button>
             </div>
           )}
         </div>
 
-        {/* ✅ Admin button only for admin */}
+        {/* Admin button only for admin */}
         {userRole === "admin" && (
           <div
             className={activePage === 'admin' ? 'nav-item-active' : 'nav-item'}
@@ -114,5 +132,8 @@ function NavBar({ activePage }) {
 }
 
 export default NavBar;
+
+
+
 
 

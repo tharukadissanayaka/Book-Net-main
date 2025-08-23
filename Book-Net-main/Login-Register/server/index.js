@@ -5,6 +5,7 @@ const Employeemodel = require('./models/Employee');
 const Cartmodel = require('./models/Cart');
 const OrderModel = require('./models/Order');
 const BooksModel = require('./models/Books');
+const ReadingBooksModel = require('./models/ReadingBooks');
 
 
 
@@ -13,23 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-/*
-app.post('/login', (req, res) => {
-    const { email, password } = req.body;
-    Employeemodel.findOne({email: email})
-    .then(user => {
-        if(user){
-            if(user.password === password){
-                res.json("Success");
-            } else {
-                res.json("Incorrect Password");
-            }
-        }else{
-            res.json("User not found");
-        }
-    });
-});
-*/
+
 
 app.post('/register', (req, res) => {
     Employeemodel.create(req.body)
@@ -169,6 +154,61 @@ app.delete("/books/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// ✅ Add a reading book
+app.post("/newbooks", async (req, res) => {
+  try {
+    const book = await ReadingBooksModel.create(req.body);
+    res.json(book);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// ✅ Get all reading books
+app.get("/newbooks", async (req, res) => {
+  try {
+    const books = await ReadingBooksModel.find();
+    res.json(books);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// ✅ Get single reading book (for continue reading)
+app.get("/newbooks/:id", async (req, res) => {
+  try {
+    const book = await ReadingBooksModel.findById(req.params.id);
+    res.json(book);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// ✅ Update reading book
+app.put("/newbooks/:id", async (req, res) => {
+  try {
+    const updated = await ReadingBooksModel.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    res.json(updated);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// ✅ Delete reading book
+app.delete("/newbooks/:id", async (req, res) => {
+  try {
+    await ReadingBooksModel.findByIdAndDelete(req.params.id);
+    res.json({ message: "Reading book deleted" });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 
 
