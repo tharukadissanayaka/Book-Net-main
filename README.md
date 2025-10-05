@@ -13,5 +13,5 @@ Technology Stack
 
 This combination of technologies ensures a scalable, secure, and high-performance system for the Book Net platform.
 
-<img width="1918" height="925" alt="image" src="https://github.com/user-attachments/assets/2be03fd8-2e32-46a1-990d-b5b3ae5488e9" />
+
 
